@@ -24,11 +24,11 @@
     ],
     "bug_report_endpoint_url": "https://dialogmessenger.ru/",
     "uisi_autorageshake_app": "element-auto-uisi",
-    "default_country_code": "GB",
+    "default_country_code": "RU",
     "show_labs_settings": true,
     "features": { },
     "default_federate": true,
-    "default_theme": "dark", //"light",
+    "default_theme": "dark",
     "room_directory": {
         "servers": [
             "matrix.org"
