@@ -1,8 +1,8 @@
 {
     "default_server_config": {
         "m.homeserver": {
-            "base_url": "https://server.dialogmessenger.ru/",
-            "server_name": "server.dialogmessenger.ru"
+            "base_url": "https://call.message.boutique/",
+            "server_name": "call.message.boutique"
         },
         "m.identity_server": {
             "base_url": "https://vector.im"
