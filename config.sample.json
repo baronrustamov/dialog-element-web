@@ -31,7 +31,7 @@
     "default_theme": "dark",
     "room_directory": {
         "servers": [
-            "matrix.org"
+            "call.message.boutique"
         ]
     },
     "enable_presence_by_hs_url": {
