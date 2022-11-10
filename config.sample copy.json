@@ -26,21 +26,7 @@
     "uisi_autorageshake_app": "element-auto-uisi",
     "default_country_code": "RU",
     "show_labs_settings": true,
-    "features": { 
-        "feature_pinning": true,
-        "feature_jump_to_date": true,
-        "feature_mjolnir": true,
-        "feature_extensible_events": true,
-        "feature_thread" : true,
-        "feature_location_share_pin_drop": true,
-        "feature_location_share_live": true,
-        "feature_video_rooms": true,
-        "feature_element_call_video_rooms": true,
-        "feature_group_calls": true,
-        "feature_html_topic": true,
-        "feature_exploring_public_spaces": true,
-        "feature_favourite_messages": true
-    },
+    "features": { },
     "default_federate": true,
     "default_theme": "dark",
     "room_directory": {
