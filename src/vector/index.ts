@@ -40,7 +40,7 @@ require('katex/dist/katex.css');
 require('./devcss');
 require('./localstorage-fix');
 
-async function settled(...promises: Array<Promise<any>>) {
+async function settled(...promises: Array<Promise<any>>): Promise<void> {
     for (const prom of promises) {
         try {
             await prom;
@@ -50,7 +50,7 @@ async function settled(...promises: Array<Promise<any>>) {
     }
 }
 
-function checkBrowserFeatures() {
+function checkBrowserFeatures(): boolean {
     if (!window.Modernizr) {
         logger.error("Cannot check features - Modernizr global is missing.");
         return false;
@@ -77,16 +77,16 @@ function checkBrowserFeatures() {
     const featureList = Object.keys(window.Modernizr);
 
     let featureComplete = true;
-    for (let i = 0; i < featureList.length; i++) {
-        if (window.Modernizr[featureList[i]] === undefined) {
+    for (const feature of featureList) {
+        if (window.Modernizr[feature] === undefined) {
             logger.error(
                 "Looked for feature '%s' but Modernizr has no results for this. " +
-                "Has it been configured correctly?", featureList[i],
+                "Has it been configured correctly?", feature,
             );
             return false;
         }
-        if (window.Modernizr[featureList[i]] === false) {
-            logger.error("Browser missing feature: '%s'", featureList[i]);
+        if (window.Modernizr[feature] === false) {
+            logger.error("Browser missing feature: '%s'", feature);
             // toggle flag rather than return early so we log all missing features rather than just the first.
             featureComplete = false;
         }
@@ -102,7 +102,7 @@ const supportedBrowser = checkBrowserFeatures();
 // We start loading stuff but don't block on it until as late as possible to allow
 // the browser to use as much parallelism as it can.
 // Load parallelism is based on research in https://github.com/vector-im/element-web/issues/12253
-async function start() {
+async function start(): Promise<void> {
     // load init.ts async so that its code is not executed immediately and we can catch any exceptions
     const {
         rageshakePromise,
